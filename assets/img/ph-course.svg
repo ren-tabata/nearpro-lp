@@ -1,19 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="ゴルフコース写真（仮画像）">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="ゴルフコース写真（仮画像）">
   <defs>
-    <linearGradient id="gc" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#cfe0a3"/>
-      <stop offset="0.55" stop-color="#e7dca0"/>
-      <stop offset="1" stop-color="#f0c877"/>
+    <linearGradient id="dc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12211a"/>
+      <stop offset="0.6" stop-color="#0f1512"/>
+      <stop offset="1" stop-color="#0b0d0c"/>
     </linearGradient>
+    <radialGradient id="dsun" cx="70%" cy="28%" r="40%">
+      <stop offset="0" stop-color="#a6e64d" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#a6e64d" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect width="800" height="520" fill="url(#gc)"/>
-  <circle cx="560" cy="150" r="70" fill="#fff6dc" opacity="0.85"/>
-  <path d="M0 400 Q200 350 400 390 T800 380 V520 H0 Z" fill="#a9c46e" opacity="0.55"/>
-  <g fill="none" stroke="#6f7d4f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="330" y="205" width="140" height="106" rx="12"/>
-    <circle cx="365" cy="240" r="12"/>
-    <path d="M336 303l42-44 29 29 25-21 32 26"/>
+  <rect width="800" height="560" fill="url(#dc)"/>
+  <rect width="800" height="560" fill="url(#dsun)"/>
+  <path d="M0 430 Q200 388 400 418 T800 408 V560 H0 Z" fill="#1a2a1e" opacity="0.7"/>
+  <g fill="none" stroke="#a6e64d" stroke-opacity="0.6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="332" y="214" width="136" height="104" rx="12"/>
+    <circle cx="366" cy="248" r="12"/>
+    <path d="M338 312l42-44 28 28 25-21 31 26"/>
   </g>
-  <text x="400" y="360" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-size="30" fill="#5f6b45" font-weight="700">写真（仮）</text>
-  <text x="400" y="392" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-size="19" fill="#6f7c50">夕暮れのゴルフコースなど</text>
+  <text x="400" y="368" text-anchor="middle" font-family="'Space Grotesk','Hiragino Sans',sans-serif" font-size="23" letter-spacing="3" fill="#c7cfbf" font-weight="600">PHOTO（仮）</text>
+  <text x="400" y="398" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-size="17" fill="#8b9384">夕暮れのゴルフコースなど</text>
 </svg>
