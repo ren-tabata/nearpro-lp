@@ -1,10 +1,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NearPro（ニアプロ） — プロを、もっと身近に</title>
-<meta name="description" content="現役ゴルファーが、あなたに必要な判断だけをチャットで届けるゴルフ上達サービス。情報を増やすのではなく、迷いを減らす。月額4,980円（税込）。" />
+<meta name="description" content="現役プロゴルファーが、あなたに必要な判断だけをチャットで届けるゴルフ上達サービス。情報を増やすのではなく、迷いを減らす。月額4,980円（税込）。" />
 <meta name="theme-color" content="#0b0d0c" />
 <meta property="og:title" content="NearPro — プロを、もっと身近に" />
-<meta property="og:description" content="情報を増やすのではなく、迷いを減らす。現役ゴルファーがチャットで伴走。" />
+<meta property="og:description" content="情報を増やすのではなく、迷いを減らす。現役プロゴルファーがチャットで伴走。" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -30,7 +30,7 @@
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
   body {
     margin: 0;
     background: var(--bg);
@@ -240,6 +240,18 @@
   .feat h4 { font-family: var(--serif); font-size: 20px; margin: 0 0 8px; font-weight: 700; }
   .feat p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
+  /* ===== Profile ===== */
+  .profile-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 52px; align-items: center; }
+  .profile-photo { border-radius: 20px; overflow: hidden; border: 1px solid var(--line-strong); box-shadow: 0 30px 70px rgba(0,0,0,0.45); background: #141815; aspect-ratio: 4 / 5; }
+  .profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 16%; }
+  .p-role { font-family: var(--mono); color: var(--accent); letter-spacing: 0.16em; text-transform: uppercase; font-size: 13px; margin: 0 0 12px; }
+  .p-name { font-family: var(--serif); font-weight: 800; font-size: clamp(30px, 4vw, 46px); line-height: 1.2; margin: 0 0 26px; }
+  .p-name span { display: block; font-family: var(--mono); font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0.12em; margin-top: 8px; }
+  .p-bio { color: var(--muted); font-size: 16px; margin: 0 0 28px; max-width: 42em; }
+  .p-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+  .p-points li { position: relative; padding-left: 28px; color: #d6dbd2; }
+  .p-points li::before { content: ""; position: absolute; left: 0; top: 13px; width: 14px; height: 2px; background: var(--accent); }
+
   /* ===== Flow / how it works ===== */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
   .step { position: relative; border: 1px solid var(--line); border-radius: 20px; padding: 40px 28px 34px; background: rgba(255,255,255,0.02); }
@@ -248,7 +260,7 @@
   .step p { margin: 0; color: var(--muted); font-size: 14.5px; }
 
   /* ===== Pricing ===== */
-  .pricing { position: relative; }
+  .pricing { position: relative; overflow: hidden; }
   .pricing .glow { position: absolute; left: 50%; top: 30%; width: 640px; height: 460px; transform: translateX(-50%); background: radial-gradient(circle, rgba(166,230,77,0.14), transparent 62%); pointer-events: none; }
   .price-card {
     max-width: 620px; margin: 0 auto; border: 1px solid var(--line-strong); border-radius: 26px;
@@ -293,6 +305,8 @@
     .why-grid { grid-template-columns: 1fr; gap: 40px; }
     .svc-top { grid-template-columns: 1fr; gap: 32px; }
     .svc-photo { order: -1; }
+    .profile-grid { grid-template-columns: 1fr; gap: 26px; }
+    .profile-photo { max-width: 300px; }
     .feat3 { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr; }
     .scroll-hint { display: none; }
@@ -338,6 +352,7 @@
       <a class="link" href="#problems">Problems</a>
       <a class="link" href="#why">Why</a>
       <a class="link" href="#service">Service</a>
+      <a class="link" href="#profile">Profile</a>
       <a class="link" href="#price">Price</a>
       <a class="btn primary" href="#price"><span class="ico" aria-label="LINE"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#06C755"/><path fill="#fff" d="M24 11.5c-7.4 0-13.4 4.87-13.4 10.86 0 5.37 4.76 9.86 11.19 10.71.44.1 1.03.29 1.18.67.13.34.09.87.04 1.21l-.19 1.15c-.06.34-.27 1.33 1.17.72 1.44-.6 7.75-4.56 10.58-7.82h-.01c1.95-2.14 2.89-4.32 2.89-6.73 0-5.99-6.05-10.86-13.45-10.86z"/><g fill="#06C755"><path d="M20.7 20.2h-.94a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM27.2 20.2h-.94a.26.26 0 0 0-.26.26v3.47l-2.68-3.62-.02-.02v-.01h-1.06a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-3.47l2.69 3.63c.02.03.04.05.06.06l.02.01h1.05c.14 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM18.44 25.2h-2.56v-4.74a.26.26 0 0 0-.26-.26h-.94a.26.26 0 0 0-.26.26v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26zM32.5 21.66c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-3.77a.25.25 0 0 0-.18.07.26.26 0 0 0-.07.18v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56z"/></g></svg></span>始める</a>
     </nav>
@@ -349,21 +364,21 @@
   <div class="hero-photo">
     <picture>
       <source srcset="assets/img/hero-player.webp" type="image/webp" />
-      <img src="assets/img/hero-player.jpg" alt="ゴルフクラブを持つ現役ゴルファー" />
+      <img src="assets/img/hero-player.jpg" alt="ゴルフクラブを持つ現役プロゴルファー" />
     </picture>
   </div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
       <h1 class="title">プロを、<br /><span class="nb"><em>もっと身近</em>に。</span></h1>
-      <p class="hero-lead">情報を増やすのではなく、<b>迷いを減らす。</b><br />現役ゴルファーが、あなたに必要な判断だけを届けます。</p>
+      <p class="hero-lead">情報を増やすのではなく、<b>迷いを減らす。</b><br />現役プロゴルファーが、あなたに必要な判断だけを届けます。</p>
       <div class="hero-actions">
         <a class="btn primary big" href="#price"><span class="ico" aria-label="LINE"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#06C755"/><path fill="#fff" d="M24 11.5c-7.4 0-13.4 4.87-13.4 10.86 0 5.37 4.76 9.86 11.19 10.71.44.1 1.03.29 1.18.67.13.34.09.87.04 1.21l-.19 1.15c-.06.34-.27 1.33 1.17.72 1.44-.6 7.75-4.56 10.58-7.82h-.01c1.95-2.14 2.89-4.32 2.89-6.73 0-5.99-6.05-10.86-13.45-10.86z"/><g fill="#06C755"><path d="M20.7 20.2h-.94a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM27.2 20.2h-.94a.26.26 0 0 0-.26.26v3.47l-2.68-3.62-.02-.02v-.01h-1.06a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-3.47l2.69 3.63c.02.03.04.05.06.06l.02.01h1.05c.14 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM18.44 25.2h-2.56v-4.74a.26.26 0 0 0-.26-.26h-.94a.26.26 0 0 0-.26.26v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26zM32.5 21.66c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-3.77a.25.25 0 0 0-.18.07.26.26 0 0 0-.07.18v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56z"/></g></svg></span>NearPROを始める<span>→</span></a>
         <div class="price-tag"><span>月額</span><b>¥4,980</b><span>税込</span></div>
       </div>
       <ul class="hero-stats">
         <li><span class="n">1対1</span><span class="l">チャットで直接相談</span></li>
-        <li><span class="n">現役</span><span class="l">ゴルファーが監修</span></li>
+        <li><span class="n">現役</span><span class="l">プロゴルファーが監修</span></li>
         <li><span class="n">最短</span><span class="l">迷わず上達へ</span></li>
       </ul>
     </div>
@@ -493,10 +508,36 @@
   </div>
 </section>
 
+<!-- ===== PROFILE ===== -->
+<section class="section profile" id="profile">
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="num">04</span> Profile <span class="jp">監修プロゴルファー</span></div>
+    <div class="profile-grid">
+      <div class="profile-photo reveal">
+        <picture>
+          <source srcset="assets/img/hero-player.webp" type="image/webp" />
+          <img src="assets/img/hero-player.jpg" alt="小木野 太優（現役プロゴルファー）" loading="lazy" />
+        </picture>
+      </div>
+      <div class="profile-body reveal d1">
+        <p class="p-role">現役プロゴルファー</p>
+        <h3 class="p-name">小木野 太優<span>Taiyu Ogino</span></h3>
+        <!-- ↓プロフィール文・特長は仮のたたき台です。本番の経歴に差し替えてください -->
+        <p class="p-bio">情報があふれる時代に、自身も「何が正しいのか」で遠回りをした経験を持つ現役プロ。だからこそ、たくさん教えるのではなく“あなたに必要なことだけ”を届けることを大切にしています。スイングだけでなく、身体の使い方や考え方まで、チャットで一人ひとりに寄り添います。</p>
+        <ul class="p-points">
+          <li>挑戦を続ける現役プロならではの視点でアドバイス</li>
+          <li>「なぜそうするのか」を言語化した、納得できる指導</li>
+          <li>動画を送るだけ。チャットで気軽に相談できる</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FLOW ===== -->
 <section class="section" id="flow">
   <div class="wrap">
-    <div class="sec-label reveal"><span class="num">04</span> How it works <span class="jp">はじめ方は、かんたん</span></div>
+    <div class="sec-label reveal"><span class="num">05</span> How it works <span class="jp">はじめ方は、かんたん</span></div>
     <div class="steps">
       <div class="step reveal">
         <div class="sn">01</div>
@@ -506,7 +547,7 @@
       <div class="step reveal d1">
         <div class="sn">02</div>
         <h4>チャットで相談</h4>
-        <p>スイングの動画や悩みを送るだけ。現役ゴルファーがあなた専用に回答します。</p>
+        <p>スイングの動画や悩みを送るだけ。現役プロゴルファーがあなた専用に回答します。</p>
       </div>
       <div class="step reveal d2">
         <div class="sn">03</div>
@@ -521,9 +562,9 @@
 <section class="section pricing" id="price">
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="sec-label reveal"><span class="num">05</span> Pricing <span class="jp">シンプルな料金で、今日から</span></div>
+    <div class="sec-label reveal"><span class="num">06</span> Pricing <span class="jp">シンプルな料金で、今日から</span></div>
     <div class="price-card reveal d1">
-      <span class="badge">現役ゴルファーが伴走</span>
+      <span class="badge">現役プロゴルファーが伴走</span>
       <div class="amt">¥4,980<small> / 月（税込）</small></div>
       <ul>
         <li>チャットでいつでも相談できる</li>
@@ -550,7 +591,7 @@
   <div class="wrap fwrap">
     <div>
       <div class="brand">Near<b style="color:var(--accent)">Pro</b></div>
-      <p style="color:var(--faint);font-size:13px;max-width:22em;margin:12px 0 0;">現役ゴルファーが、あなたに必要な判断だけをチャットで届けるゴルフ上達サービス。</p>
+      <p style="color:var(--faint);font-size:13px;max-width:22em;margin:12px 0 0;">現役プロゴルファーが、あなたに必要な判断だけをチャットで届けるゴルフ上達サービス。</p>
     </div>
     <nav>
       <a href="#">利用規約</a>
