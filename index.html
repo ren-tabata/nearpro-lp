@@ -88,12 +88,14 @@
   /* ===== Header ===== */
   header.site {
     position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-    transition: background 0.4s var(--ease), border-color 0.4s var(--ease), backdrop-filter 0.4s;
-    border-bottom: 1px solid transparent;
+    background: rgba(11, 13, 12, 0.62);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2); backdrop-filter: blur(12px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+    transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
   }
   header.site.scrolled {
-    background: rgba(11, 13, 12, 0.72); backdrop-filter: blur(14px) saturate(1.2);
-    border-bottom: 1px solid var(--line);
+    background: rgba(11, 13, 12, 0.85);
+    border-bottom-color: var(--line-strong);
   }
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 74px; }
   .brand { font-family: var(--brand); font-weight: 800; font-size: 22px; letter-spacing: -0.01em; }
