@@ -155,17 +155,8 @@
   .flowbox .txt .em { color: var(--green-dark); font-weight: 700; }
 
   .why-side .imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 26px; }
-  .ph-circle {
-    aspect-ratio: 1; border-radius: 50%; position: relative; overflow: hidden;
-    display: flex; align-items: flex-end; justify-content: center; color: #fff;
-    font-size: 13px; text-align: center; padding-bottom: 14px;
-  }
-  .ph-circle.a { background: linear-gradient(160deg, #cfe0ef, #9db8cf 60%, #7f9cb6); }
-  .ph-circle.b { background: linear-gradient(160deg, #d3dbe4, #8ea3b6 60%, #5f7488); }
-  .ph-circle .q { position: absolute; top: 12%; left: 0; right: 0; color: #6b7885; font-size: 26px; font-weight: 700; letter-spacing:.3em;}
-  .ph-circle .glow { position:absolute; width:44%; height:44%; left:28%; top:40%;
-    background: radial-gradient(circle, rgba(255,170,40,.85), rgba(255,170,40,0) 70%); }
-  .ph-tag { background: rgba(0,0,0,.35); padding: 2px 8px; border-radius: 6px; }
+  .ph-circle { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #e9eef3; }
+  .ph-circle img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .why-quote {
     border-left: 3px solid var(--green); padding-left: 22px;
     font-family: var(--serif); font-size: clamp(19px, 2.2vw, 24px); line-height: 1.9; color: #3a3f38;
@@ -186,16 +177,8 @@
   .feat:first-child { border-left: none; padding-left: 0; }
   .feat .icon { width: 46px; height: 46px; color: var(--green); margin-bottom: 12px; }
   .feat p { margin: 0; font-size: 13px; color: #55594f; line-height: 1.7; }
-  .sol-photo {
-    background: linear-gradient(120deg, #b7d38f 0%, #cfe0a3 30%, #f3d98f 62%, #f0b95f 100%);
-    position: relative; min-height: 340px;
-  }
-  .sol-photo::after {
-    content: "⛳"; position: absolute; right: 8%; bottom: 12%; font-size: 64px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,.2));
-  }
-  .sol-photo .sun { position:absolute; right:14%; top:20%; width:120px; height:120px; border-radius:50%;
-    background: radial-gradient(circle, rgba(255,244,214,.95), rgba(255,244,214,0) 70%); }
+  .sol-photo { position: relative; min-height: 340px; background: #e7dca0; }
+  .sol-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .cta-chevron { text-align:center; color:#b7bcb2; font-size: 26px; margin: 22px 0 8px; }
   .cta-line-txt {
     text-align: center; font-family: var(--serif); font-size: clamp(22px, 3.2vw, 34px);
@@ -238,12 +221,31 @@
   @media (max-width: 480px) {
     section { padding: 56px 0; }
     .wrap { padding: 0 18px; }
+    .sec-head { gap: 12px; font-size: 20px; }
+    .sec-head::before, .sec-head::after { width: 18px; }
     .cards4 { grid-template-columns: 1fr; }
     .triple { grid-template-columns: 1fr; }
     .triple .plus { display:none; }
     .feat3 { grid-template-columns: 1fr; gap: 18px; }
     .feat { border-left:none; padding: 0; }
     .btn-line { width: 100%; justify-content: center; }
+    .sol-body { padding: 32px 24px; }
+    .price-card { padding: 34px 22px; }
+    .price-card .amount { font-size: 44px; }
+  }
+
+  /* スマホ下部の追従CTA */
+  .mobile-cta { display: none; }
+  @media (max-width: 640px) {
+    .mobile-cta {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      background: rgba(255,255,255,.94); backdrop-filter: blur(10px);
+      border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgba(0,0,0,.06);
+    }
+    .mobile-cta .btn-line { flex: 1; justify-content: center; padding: 15px 20px; font-size: 17px; box-shadow: none; }
+    body { padding-bottom: 80px; }
+    header.site .nav-cta { display: none; }
   }
 </style>
 
@@ -367,10 +369,10 @@
       </div>
 
       <aside class="why-side">
-        <!-- 画像プレースホルダー：腰の不調 / レントゲン。assets/img に写真を置いて差し替え可能 -->
+        <!-- 仮画像：本番写真は assets/img/ph-swing.svg / ph-body.svg を差し替え（jpg等でも可） -->
         <div class="imgs">
-          <div class="ph-circle a"><span class="q">? ? ?</span><span class="glow"></span><span class="ph-tag">スイングの不安</span></div>
-          <div class="ph-circle b"><span class="q">? ? ?</span><span class="glow"></span><span class="ph-tag">体の悩み</span></div>
+          <div class="ph-circle"><img src="assets/img/ph-swing.svg" alt="スイング・動作の悩み（仮画像）" loading="lazy" /></div>
+          <div class="ph-circle"><img src="assets/img/ph-body.svg" alt="体・姿勢の悩み（仮画像）" loading="lazy" /></div>
         </div>
         <p class="why-quote">情報を集めるほど、迷いは増える。<br />ご自身の身体を理解すれば、<br />必要なことが見えてくる</p>
       </aside>
@@ -401,8 +403,9 @@
           </div>
         </div>
       </div>
-      <div class="sol-photo" aria-label="夕暮れのゴルフコースイメージ">
-        <span class="sun"></span>
+      <!-- 仮画像：本番写真は assets/img/ph-course.svg を差し替え（jpg等でも可） -->
+      <div class="sol-photo">
+        <img src="assets/img/ph-course.svg" alt="ゴルフコース写真（仮画像）" loading="lazy" />
       </div>
     </div>
 
@@ -445,3 +448,12 @@
     <p class="copy">© 2026 NearPro. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- スマホ専用：画面下に追従するCTA -->
+<div class="mobile-cta">
+  <a class="btn-line" href="#cta">
+    <span class="ico">LINE</span>
+    <span>NearPROを始める</span>
+    <span class="arw">→</span>
+  </a>
+</div>
