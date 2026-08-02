@@ -189,7 +189,7 @@
   /* ===== Marquee ===== */
   .marquee { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 20px 0; overflow: hidden; background: #0d100e; }
   .marquee-track { display: flex; gap: 34px; white-space: nowrap; width: max-content; animation: slide 26s linear infinite; }
-  .marquee span { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--faint); }
+  .marquee span { font-family: var(--brand); font-size: 24px; font-weight: 800; letter-spacing: 0.01em; color: var(--faint); }
   .marquee span.hot { color: var(--accent); }
   .marquee .sep { color: rgba(255,255,255,0.16); }
   @keyframes slide { to { transform: translateX(-50%); } }
@@ -401,6 +401,18 @@
   </div>
   <div class="scroll-hint">SCROLL</div>
 </section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+    <span>NearPro</span><span class="sep">◦</span><span class="hot">NearPro</span><span class="sep">◦</span>
+  </div>
+</div>
 
 <!-- ===== PROBLEMS ===== -->
 <section class="section" id="problems">
