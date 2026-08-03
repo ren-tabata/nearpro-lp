@@ -425,7 +425,7 @@
   @media (max-width: 560px) {
     .wrap { padding: 0 20px; }
     .section { padding: 68px 0; }
-    .hero { padding: 78px 0 96px; min-height: 100svh; align-items: stretch; }
+    .hero { padding: 104px 0 96px; min-height: 100svh; align-items: stretch; }
     .hero-inner { display: flex; }
     .hero-copy { display: flex; flex-direction: column; flex: 1; }
     .hero .kicker.limited { margin-top: auto; margin-bottom: 14px; }
