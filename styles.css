@@ -278,6 +278,11 @@
   .price-card li::after { content: "✓"; position: absolute; left: 4px; top: 0; color: var(--accent); font-size: 12px; font-weight: 700; }
   .price-card .btn { width: 100%; justify-content: center; }
   .price-note { text-align: center; color: var(--faint); font-size: 13px; margin-top: 20px; }
+  .faq-link { text-align: center; margin: 30px 0 0; }
+  .faq-link a { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 14.5px; border-bottom: 1px solid var(--line-strong); padding-bottom: 3px; transition: color 0.25s var(--ease), border-color 0.25s var(--ease); }
+  .faq-link a span { transition: transform 0.25s var(--ease); }
+  .faq-link a:hover { color: var(--accent); border-color: var(--accent); }
+  .faq-link a:hover span { transform: translateX(4px); }
 
   /* ===== Final CTA ===== */
   .final { text-align: center; padding: 130px 0; position: relative; }
