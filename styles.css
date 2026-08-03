@@ -92,6 +92,7 @@
   .nav { display: flex; align-items: center; gap: 34px; }
   .nav a.link { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--muted); transition: color 0.25s; }
   .nav a.link:hover { color: var(--text); }
+  .nav a.link[aria-current="page"] { color: var(--accent); }
   .btn {
     display: inline-flex; align-items: center; gap: 11px; font-weight: 700;
     border-radius: 999px; padding: 13px 24px; font-size: 15px; transition: transform 0.2s var(--ease), box-shadow 0.25s, background 0.25s;
