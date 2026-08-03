@@ -16,95 +16,15 @@
   .svc-hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(32px, 5.2vw, 60px); line-height: 1.24; margin: 18px 0 20px; letter-spacing: 0.01em; }
   .svc-hero .lead { color: #eaede5; font-size: clamp(16px, 2vw, 19px); max-width: 30em; margin: 0; line-height: 1.9; }
   .svc-hero .lead b { color: var(--accent); font-weight: 700; }
-
-  .sub-head { font-family: var(--serif); font-weight: 700; font-size: clamp(24px, 3.6vw, 34px); line-height: 1.4; margin: 6px 0 30px; }
-
-  /* compare */
-  .compare { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 22px; align-items: stretch; }
-  @media (max-width: 820px) { .compare { grid-template-columns: 1fr; } }
-  .panel { border: 1px solid var(--line); border-radius: 18px; padding: 28px 26px; background: rgba(255, 255, 255, 0.02); }
-  .panel .tag { display: inline-block; font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--faint); border: 1px solid var(--line); border-radius: 999px; padding: 5px 14px; margin-bottom: 18px; }
-  .panel.hot { background: rgba(166, 230, 77, 0.05); border-color: rgba(166, 230, 77, 0.28); }
-  .panel.hot .tag { color: var(--accent); border-color: rgba(166, 230, 77, 0.4); }
-  .panel h3 { font-size: 18px; margin: 0 0 14px; font-weight: 700; }
-  .advice { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-  .advice li { background: rgba(255, 255, 255, 0.04); border: 1px solid var(--line); border-radius: 10px; padding: 9px 14px; font-size: 13.5px; color: var(--muted); }
-  .panel .again { font-size: 13.5px; color: var(--faint); margin: 0 0 14px; }
-  .panel .bad { display: flex; align-items: center; gap: 10px; background: #0d100e; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; font-size: 13.5px; color: var(--text); }
-  .panel .bad .x { color: #ff6b6b; font-weight: 700; }
-  .panel.hot .nplead { color: var(--muted); font-size: 14.5px; line-height: 1.9; margin: 0; }
-
-  /* cause diagram */
-  .cause { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; margin-top: 30px; }
-  .cause-side { display: flex; flex-direction: column; gap: 14px; }
-  .cause-center { width: 168px; height: 168px; border-radius: 50%; background: radial-gradient(circle at 50% 40%, #1c211d, #050605); border: 1px solid var(--line-strong);
-    display: grid; place-items: center; text-align: center; padding: 16px; box-shadow: 0 0 0 6px rgba(166, 230, 77, 0.06), 0 20px 50px rgba(0, 0, 0, 0.5); }
-  .cause-center .ce-t { font-weight: 700; font-size: 16px; color: var(--text); }
-  .cause-center .ce-s { font-size: 11px; color: var(--faint); margin-top: 4px; }
-  .factor { border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; background: rgba(255, 255, 255, 0.02); display: flex; gap: 12px; align-items: flex-start; }
-  .factor .fic { flex-shrink: 0; width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; background: var(--accent-dim); color: var(--accent); }
-  .factor .fic svg { width: 18px; height: 18px; }
-  .factor .ft { font-weight: 700; font-size: 14px; color: var(--text); }
-  .factor .fd { font-size: 12.5px; color: var(--muted); line-height: 1.7; margin-top: 2px; }
-  @media (max-width: 760px) { .cause { grid-template-columns: 1fr 1fr; gap: 14px; } .cause-center { grid-column: 1 / -1; order: -1; margin: 0 auto 4px; } }
-  @media (max-width: 460px) { .cause { grid-template-columns: 1fr; } }
-
-  .result-flow { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
-  .result-flow .rf { border: 1px solid var(--line-strong); border-radius: 999px; padding: 11px 20px; font-size: 14px; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; }
-  .result-flow .rf .i { color: var(--accent); display: inline-grid; }
-  .result-flow .rf.last { background: var(--accent); color: #0b0d0c; border-color: var(--accent); }
-  .result-flow .arw { color: var(--accent); font-weight: 700; }
-
-  /* two-way steps */
-  .tsteps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  @media (max-width: 820px) { .tsteps { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 470px) { .tsteps { grid-template-columns: 1fr; } }
-  .tstep { border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; background: rgba(255, 255, 255, 0.02); position: relative; }
-  .tstep .sn { font-family: var(--mono); font-size: 13px; color: var(--accent); font-weight: 700; letter-spacing: 0.08em; }
-  .tstep h4 { font-size: 15.5px; margin: 10px 0 8px; font-weight: 700; }
-  .tstep p { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.8; }
-  .aim { margin-top: 26px; border: 1px solid rgba(166, 230, 77, 0.3); background: var(--accent-dim); border-radius: 16px; padding: 26px; text-align: center; }
-  .aim .lbl { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; color: var(--accent); text-transform: uppercase; }
-  .aim h3 { font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 3vw, 26px); margin: 10px 0 6px; }
-  .aim p { color: var(--muted); font-size: 14px; margin: 0; }
-
-  /* can / cannot */
-  .cc { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  @media (max-width: 820px) { .cc { grid-template-columns: 1fr; } }
-  .cc-col { border-radius: 18px; padding: 30px 26px; border: 1px solid var(--line); }
-  .cc-col.can { background: rgba(166, 230, 77, 0.05); border-color: rgba(166, 230, 77, 0.28); }
-  .cc-col > h3 { font-size: 17px; margin: 0 0 6px; font-weight: 700; }
-  .cc-col > .note { font-size: 12.5px; color: var(--faint); margin: 0 0 20px; }
-  .cc-item { display: flex; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
-  .cc-item:first-of-type { border-top: none; }
-  .cc-item .ci { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; }
-  .cc-col.cant .ci { background: rgba(255, 255, 255, 0.06); color: var(--muted); }
-  .cc-col.can .ci { background: var(--accent); color: #0b0d0c; }
-  .cc-item .ct { font-size: 14.5px; font-weight: 700; color: var(--text); }
-  .cc-item .cd { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.7; }
-  .cc-flag { margin-top: 18px; display: flex; gap: 10px; align-items: flex-start; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; font-size: 13px; color: var(--muted); }
-  .cc-flag .fi { color: var(--accent); font-weight: 700; }
-
-  /* summary */
-  .sum-lead { text-align: center; margin-bottom: 40px; }
-  .sum-lead .s1 { color: var(--muted); font-size: clamp(16px, 2.2vw, 19px); margin: 0 0 8px; }
-  .sum-lead .s2 { font-family: var(--serif); font-weight: 700; font-size: clamp(22px, 3.8vw, 34px); line-height: 1.5; margin: 0; }
-  .feats4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-  @media (max-width: 760px) { .feats4 { grid-template-columns: 1fr 1fr; } }
-  .feat4 { text-align: center; border: 1px solid var(--line); border-radius: 16px; padding: 26px 18px; background: rgba(255, 255, 255, 0.02); }
-  .feat4 .f4i { width: 48px; height: 48px; margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-dim); color: var(--accent); }
-  .feat4 .f4i svg { width: 24px; height: 24px; }
-  .feat4 p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.75; }
-  .feat4 b { color: var(--text); display: block; font-size: 15px; margin-bottom: 5px; }
+  /* section styles (.compare/.cause/.tsteps/.cc/.feats4 …) are shared from styles.css */
 </style>
 
 <header class="site" id="site-header">
   <div class="wrap">
     <a class="brand" href="index.html#top">Near<b>Pro</b></a>
     <nav class="nav">
-      <a class="link" href="index.html#problems">Problems</a>
-      <a class="link" href="index.html#why">Why</a>
-      <a class="link" href="service.html" aria-current="page">Service</a>
+      <a class="link" href="index.html#cause">Cause</a>
+      <a class="link" href="index.html#dialogue">Dialogue</a>
       <a class="link" href="index.html#profile">Profile</a>
       <a class="link" href="index.html#price">Price</a>
       <a class="link" href="faq.html">FAQ</a>
