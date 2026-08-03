@@ -1,0 +1,186 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>よくある質問（FAQ） — NearPro（ニアプロ）</title>
+<meta name="description" content="NearPro（ニアプロ）のよくある質問。料金・申し込み、進め方、サービス内容についてまとめています。" />
+<meta name="theme-color" content="#0b0d0c" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ===== FAQ page ===== */
+  .page-hero { padding: 150px 0 44px; position: relative; overflow: hidden; }
+  .page-hero::after {
+    content: ""; position: absolute; width: 720px; height: 720px; right: -220px; top: -320px; z-index: 0; pointer-events: none;
+    background: radial-gradient(circle, rgba(166, 230, 77, 0.14), rgba(166, 230, 77, 0) 62%);
+  }
+  .page-hero .wrap { position: relative; z-index: 1; }
+  .page-hero h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(34px, 5vw, 54px); line-height: 1.2; margin: 16px 0 12px; letter-spacing: 0.01em; }
+  .page-hero p { color: var(--muted); margin: 0; max-width: 30em; }
+
+  .faq-wrap { padding: 24px 0 96px; }
+  .faq-cat { margin-top: 52px; }
+  .faq-cat:first-child { margin-top: 0; }
+  .faq-cat > h2 {
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 18px; display: flex; align-items: center; gap: 14px; font-weight: 600;
+  }
+  .faq-cat > h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .faq-item {
+    border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 12px; overflow: hidden; transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
+  }
+  .faq-item[open] { border-color: var(--line-strong); background: rgba(166, 230, 77, 0.04); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 20px 22px; font-weight: 700; font-size: clamp(15px, 2.4vw, 16.5px);
+    line-height: 1.6; display: flex; align-items: center; gap: 14px; color: var(--text);
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary .q { color: var(--accent); font-family: var(--mono); font-weight: 700; flex-shrink: 0; }
+  .faq-item summary .ic {
+    margin-left: auto; flex-shrink: 0; width: 20px; height: 20px; position: relative; transition: transform 0.3s var(--ease); color: var(--muted);
+  }
+  .faq-item summary .ic::before, .faq-item summary .ic::after {
+    content: ""; position: absolute; background: currentColor; border-radius: 2px;
+  }
+  .faq-item summary .ic::before { left: 0; right: 0; top: 9px; height: 2px; }
+  .faq-item summary .ic::after { top: 0; bottom: 0; left: 9px; width: 2px; }
+  .faq-item[open] summary .ic { transform: rotate(135deg); color: var(--accent); }
+  .faq-a { padding: 0 22px 22px 56px; color: var(--muted); line-height: 1.95; font-size: 15px; }
+  .faq-a a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 560px) { .faq-a { padding-left: 22px; } }
+</style>
+
+<header class="site" id="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html#top">Near<b>Pro</b></a>
+    <nav class="nav">
+      <a class="link" href="index.html#problems">Problems</a>
+      <a class="link" href="index.html#service">Service</a>
+      <a class="link" href="index.html#price">Price</a>
+      <a class="link" href="faq.html" aria-current="page">FAQ</a>
+      <a class="btn primary" href="index.html#price"><span class="ico" aria-label="LINE"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#06C755"/><path fill="#fff" d="M24 11.5c-7.4 0-13.4 4.87-13.4 10.86 0 5.37 4.76 9.86 11.19 10.71.44.1 1.03.29 1.18.67.13.34.09.87.04 1.21l-.19 1.15c-.06.34-.27 1.33 1.17.72 1.44-.6 7.75-4.56 10.58-7.82h-.01c1.95-2.14 2.89-4.32 2.89-6.73 0-5.99-6.05-10.86-13.45-10.86z"/><g fill="#06C755"><path d="M20.7 20.2h-.94a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM27.2 20.2h-.94a.26.26 0 0 0-.26.26v3.47l-2.68-3.62-.02-.02v-.01h-1.06a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-3.47l2.69 3.63c.02.03.04.05.06.06l.02.01h1.05c.14 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM18.44 25.2h-2.56v-4.74a.26.26 0 0 0-.26-.26h-.94a.26.26 0 0 0-.26.26v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26zM32.5 21.66c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-3.77a.25.25 0 0 0-.18.07.26.26 0 0 0-.07.18v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56z"/></g></svg></span>始める</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" id="top">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>FAQ</div>
+    <h1>よくある質問</h1>
+    <p>NearProについて、よく寄せられるご質問をまとめました。ここにない疑問は、お気軽にLINEでお問い合わせください。</p>
+  </div>
+</section>
+
+<!-- ===== FAQ LIST ===== -->
+<div class="faq-wrap">
+  <div class="wrap">
+
+    <div class="faq-cat reveal">
+      <h2>料金・お申し込み</h2>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>料金はいくらですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">月額 <b>4,980円（税込）</b> です。回数の制限なく、LINEで納得いくまでご相談いただけます。追加料金はかかりません。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>「先着100名 限定募集」とは何ですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">一人ひとりに丁寧に向き合う品質を保つため、現在は<b>先着100名様</b>を上限に募集しています。定員に達した場合は、次回募集までお待ちいただくことがあります。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>支払い方法を教えてください。<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">お申し込み時にご案内します。（※お支払い方法の詳細は準備中です。）</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>解約はいつでもできますか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">はい、いつでも解約いただけます。次回のご請求日前にお手続きいただければ、それ以降の料金は発生しません。</div>
+      </details>
+    </div>
+
+    <div class="faq-cat reveal">
+      <h2>進め方</h2>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>どうやって相談するのですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">すべて<b>LINEで完結</b>します。気になる動きやミスの動画・お悩みを送っていただき、原因の仮説をお伝え→やり取りの中で理解を深めながら改善へ導きます。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>スイング動画は必須ですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">必須ではありませんが、<b>動画があると原因を特定しやすく</b>なります。スマホで撮影したものをそのままお送りいただければ大丈夫です。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>返信はどのくらいで来ますか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><b>48時間以内</b>に、いただいた順番へ丁寧にお返事します。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>対面レッスンはありますか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">NearProはオンライン専用のサービスです。オンラインだからこそできる「原因を一緒に考える」ことに集中します。必要な場合は<b>「対面で見た方がよい」とはっきりお伝えします</b>。</div>
+      </details>
+    </div>
+
+    <div class="faq-cat reveal">
+      <h2>サービス内容</h2>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>誰が見てくれるのですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a"><b>現役プロゴルファー</b>が監修・対応します。あなたの身体の特徴や動きのクセを見極め、本当に必要な一手をお届けします。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>初心者でも大丈夫ですか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">はい。レベルに合わせて、遠回りせず<b>あなたに必要な練習だけ</b>をご提案します。初心者の方も安心してご利用いただけます。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>どんなクラブ・お悩みでも相談できますか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">ドライバーからアプローチ、パターまで幅広く対応します。スコアの伸び悩み、スイングの再現性、コースでの判断など、お気軽にご相談ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>すぐに上達しますか？<span class="ic" aria-hidden="true"></span></summary>
+        <div class="faq-a">オンラインだけで劇的に、魔法のように変えることはできません。ですが、<b>原因を理解し自分で判断できる力</b>を育てることで、迷いが減り再現性の高いスイングへ近づきます。</div>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final" id="cta">
+  <div class="wrap">
+    <h2 class="reveal">プロを、<em>もっと身近</em>に。</h2>
+    <p class="reveal d1">迷う時間を、上達する時間に変えよう。</p>
+    <div class="reveal d2"><a class="btn primary big" href="index.html#price"><span class="ico" aria-label="LINE"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#06C755"/><path fill="#fff" d="M24 11.5c-7.4 0-13.4 4.87-13.4 10.86 0 5.37 4.76 9.86 11.19 10.71.44.1 1.03.29 1.18.67.13.34.09.87.04 1.21l-.19 1.15c-.06.34-.27 1.33 1.17.72 1.44-.6 7.75-4.56 10.58-7.82h-.01c1.95-2.14 2.89-4.32 2.89-6.73 0-5.99-6.05-10.86-13.45-10.86z"/><g fill="#06C755"><path d="M20.7 20.2h-.94a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM27.2 20.2h-.94a.26.26 0 0 0-.26.26v3.47l-2.68-3.62-.02-.02v-.01h-1.06a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-3.47l2.69 3.63c.02.03.04.05.06.06l.02.01h1.05c.14 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM18.44 25.2h-2.56v-4.74a.26.26 0 0 0-.26-.26h-.94a.26.26 0 0 0-.26.26v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26zM32.5 21.66c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-3.77a.25.25 0 0 0-.18.07.26.26 0 0 0-.07.18v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56z"/></g></svg></span><span class="np">NearPro</span>を始める<span>→</span></a></div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap fwrap">
+    <div>
+      <div class="brand">Near<b style="color:var(--accent)">Pro</b></div>
+      <p style="color:var(--faint);font-size:13px;max-width:22em;margin:12px 0 0;">現役プロゴルファーが、あなたに必要な判断だけをチャットで届けるゴルフ上達サービス。</p>
+    </div>
+    <nav>
+      <a href="index.html#top">トップ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="#">利用規約</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="wrap"><p class="copy">© 2026 NearPro. All rights reserved.</p></div>
+</footer>
+
+<!-- ===== Mobile sticky CTA ===== -->
+<div class="mobile-cta">
+  <a class="btn primary" href="index.html#price"><span class="ico" aria-label="LINE"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#06C755"/><path fill="#fff" d="M24 11.5c-7.4 0-13.4 4.87-13.4 10.86 0 5.37 4.76 9.86 11.19 10.71.44.1 1.03.29 1.18.67.13.34.09.87.04 1.21l-.19 1.15c-.06.34-.27 1.33 1.17.72 1.44-.6 7.75-4.56 10.58-7.82h-.01c1.95-2.14 2.89-4.32 2.89-6.73 0-5.99-6.05-10.86-13.45-10.86z"/><g fill="#06C755"><path d="M20.7 20.2h-.94a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM27.2 20.2h-.94a.26.26 0 0 0-.26.26v3.47l-2.68-3.62-.02-.02v-.01h-1.06a.26.26 0 0 0-.26.26v5.85c0 .14.12.26.26.26h.94c.15 0 .26-.12.26-.26v-3.47l2.69 3.63c.02.03.04.05.06.06l.02.01h1.05c.14 0 .26-.12.26-.26v-5.85a.26.26 0 0 0-.26-.26zM18.44 25.2h-2.56v-4.74a.26.26 0 0 0-.26-.26h-.94a.26.26 0 0 0-.26.26v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26zM32.5 21.66c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-3.77a.25.25 0 0 0-.18.07.26.26 0 0 0-.07.18v5.85c0 .07.03.13.07.18.05.04.11.07.18.07h3.77c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56c.14 0 .26-.12.26-.26v-.94a.26.26 0 0 0-.26-.26h-2.56v-.99h2.56z"/></g></svg></span><span class="np">NearPro</span>を始める<span>→</span></a>
+</div>
+
+<script>
+  const header = document.getElementById('site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
