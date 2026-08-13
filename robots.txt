@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nearpro.pages.dev/sitemap.xml
