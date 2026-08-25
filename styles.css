@@ -546,11 +546,16 @@
   .article-figure img { width: 100%; height: auto; display: block; }
 
   .article-body { padding: 10px 0 90px; }
-  .article-body .wrap { max-width: 760px; }
-  .article-body h2 { font-family: var(--sans); font-size: clamp(19px, 2.8vw, 25px); font-weight: 700; line-height: 1.6;
-    letter-spacing: -0.005em; margin: 54px 0 16px; padding-left: 14px; border-left: 4px solid var(--accent); }
-  .article-body h3 { font-size: clamp(17px, 2.3vw, 20px); font-weight: 700; margin: 34px 0 12px; color: var(--text); }
-  .article-body p { color: #c9cfc7; font-size: 15.5px; line-height: 2.05; margin: 0 0 20px; }
+  .article-body .wrap { max-width: 720px; counter-reset: sec; }
+  .article-body h2 { font-family: var(--sans); font-size: clamp(20px, 2.9vw, 26px); font-weight: 700; line-height: 1.55;
+    letter-spacing: -0.005em; counter-increment: sec; margin: 84px 0 26px; padding-top: 30px;
+    border-top: 1px solid var(--line-strong); }
+  .article-body h2::before { content: "SECTION " counter(sec, decimal-leading-zero); display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: var(--accent);
+    margin-bottom: 14px; }
+  .article-body h3 { font-size: clamp(17px, 2.3vw, 19px); font-weight: 700; margin: 44px 0 14px; color: var(--text);
+    line-height: 1.7; padding-left: 15px; border-left: 3px solid rgba(166,230,77,0.45); }
+  .article-body p { color: #c2c9bf; font-size: 16px; line-height: 2.15; margin: 0 0 21px; }
   .article-body strong { color: var(--text); font-weight: 700; }
   .article-body em { color: var(--accent); font-style: normal; font-weight: 700; }
   .article-body ul, .article-body ol { color: #c9cfc7; font-size: 15.5px; line-height: 2.05; padding-left: 1.4em; margin: 0 0 20px; }
@@ -589,3 +594,55 @@
   .toc a { color: var(--muted); text-decoration: none; }
   .toc a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
   .article-body h2[id] { scroll-margin-top: 100px; }
+
+  /* ===== 記事：読みやすさのための装飾 ===== */
+
+  /* 冒頭「この記事でわかること」 */
+  .keypoints { border: 1px solid var(--line-strong); border-radius: 18px; padding: 26px 28px 24px;
+    margin: 0 0 10px; background: rgba(255,255,255,0.025); }
+  .keypoints .ttl { display: block; font-family: var(--mono); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.2em; color: var(--accent); margin-bottom: 16px; }
+  .keypoints ul { list-style: none; padding: 0 !important; margin: 0 !important; }
+  .keypoints li { position: relative; padding-left: 28px; margin-bottom: 12px;
+    font-size: 15px; line-height: 1.85; color: #d3d9cf; }
+  .keypoints li:last-child { margin-bottom: 0; }
+  .keypoints li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 7px; height: 7px;
+    border-radius: 50%; background: var(--accent); }
+
+  /* 本文中の要点ブロック（段落まるごとの強調） */
+  .article-body .lead-line { font-size: clamp(16.5px, 2.2vw, 19px); line-height: 1.95; font-weight: 700;
+    color: var(--text); margin: 36px 0; padding: 24px 26px; border-radius: 16px;
+    background: linear-gradient(180deg, rgba(166,230,77,0.075), rgba(166,230,77,0.015));
+    border: 1px solid rgba(166,230,77,0.22); position: relative; }
+  .article-body .lead-line::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px;
+    width: 3px; border-radius: 3px; background: var(--accent); }
+
+  /* 原因の6要素（カード） */
+  .factor-grid { list-style: none; padding: 0 !important; margin: 26px 0 30px !important;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .factor-grid li { margin: 0; border: 1px solid var(--line); border-radius: 13px; padding: 17px 19px;
+    background: rgba(255,255,255,0.02); font-size: 14.5px; line-height: 1.8; color: #c2c9bf; }
+
+  /* セルフチェックの番号つき見出し */
+  .article-body h3.check { display: flex; align-items: flex-start; gap: 14px;
+    padding-left: 0; border-left: 0; margin: 46px 0 14px; }
+  .article-body h3.check .n { flex: none; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--accent); color: #0b0d0c; font-family: var(--mono); font-weight: 700; font-size: 14px;
+    display: grid; place-items: center; margin-top: 3px; }
+
+  @media (max-width: 640px) {
+    .factor-grid { grid-template-columns: 1fr; }
+    .article-body p { font-size: 15.5px; line-height: 2.1; }
+    .article-body h2 { margin-top: 66px; padding-top: 26px; }
+    .keypoints { padding: 22px 20px; }
+    .article-body .lead-line { padding: 20px 20px; }
+  }
+
+  /* 記事タイトルのサブ見出し */
+  .article-head h1 .sub { display: block; font-size: 0.56em; font-weight: 500; color: var(--muted);
+    line-height: 1.75; margin-top: 16px; letter-spacing: 0; }
+
+  /* 図解は本文より広く表示して見やすく */
+  @media (min-width: 920px) {
+    .article-body figure.wide { width: calc(100% + 140px); margin-left: -70px; }
+  }
