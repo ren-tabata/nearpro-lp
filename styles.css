@@ -578,3 +578,14 @@
   .draft-bar { position: sticky; top: 74px; z-index: 30; background: #3a2d05; border-bottom: 1px solid #6b5410;
     color: #ffd76a; font-size: 12.5px; text-align: center; padding: 8px 16px; letter-spacing: .02em; }
   @media (max-width: 860px) { .article-head { padding-top: 118px; } .blog-hero { padding-top: 118px; } }
+
+  /* ===== 記事の目次 ===== */
+  .toc { border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; margin: 6px 0 40px;
+         background: rgba(255,255,255,0.02); }
+  .toc-ttl { display: block; font-family: var(--serif); font-weight: 700; font-size: 15px; color: var(--text);
+             margin-bottom: 12px; letter-spacing: .04em; }
+  .toc ol { margin: 0; padding-left: 1.3em; color: var(--faint); font-size: 14.5px; line-height: 1.9; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { color: var(--muted); text-decoration: none; }
+  .toc a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .article-body h2[id] { scroll-margin-top: 100px; }
