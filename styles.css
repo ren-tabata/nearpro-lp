@@ -524,9 +524,15 @@
 
   .post-list { padding: 20px 0 100px; }
   .post-list .wrap { max-width: 900px; }
-  .post-card { display: block; border: 1px solid var(--line); border-radius: 16px; padding: 26px 26px;
+  .post-card { display: grid; grid-template-columns: 300px 1fr; align-items: stretch; gap: 0;
+    overflow: hidden; border: 1px solid var(--line); border-radius: 16px;
     margin-bottom: 16px; background: rgba(255,255,255,0.02);
     transition: border-color .25s var(--ease), background .25s var(--ease), transform .25s var(--ease); }
+  .post-thumb { position: relative; overflow: hidden; background: #14171400; min-height: 190px; }
+  .post-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;
+    transition: transform .5s var(--ease); }
+  .post-card:hover .post-thumb img { transform: scale(1.045); }
+  .post-body { padding: 26px 28px; display: flex; flex-direction: column; justify-content: center; }
   .post-card:hover { border-color: rgba(166,230,77,0.4); background: rgba(166,230,77,0.04); transform: translateY(-2px); }
   .post-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
   .post-cat { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; color: var(--accent);
@@ -645,4 +651,10 @@
   /* 図解は本文より広く表示して見やすく */
   @media (min-width: 920px) {
     .article-body figure.wide { width: calc(100% + 140px); margin-left: -70px; }
+  }
+
+  @media (max-width: 720px) {
+    .post-card { grid-template-columns: 1fr; }
+    .post-thumb { min-height: 0; aspect-ratio: 16 / 10; }
+    .post-body { padding: 22px 20px 24px; }
   }
