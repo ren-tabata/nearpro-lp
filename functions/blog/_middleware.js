@@ -8,17 +8,6 @@
 export async function onRequest(context) {
   const { request, env, next } = context;
 
-  // --- 一時的な診断用（原因特定後に削除する） ---
-  if (new URL(request.url).searchParams.get("diag") === "1") {
-    const keys = Object.keys(env || {});
-    return new Response(
-      "環境変数として見えているキー: " + (keys.length ? keys.join(", ") : "(なし)") +
-      "\nBLOG_PASSの有無: " + (env.BLOG_PASS ? "あり" : "なし") +
-      "\nBLOG_USERの有無: " + (env.BLOG_USER ? "あり" : "なし"),
-      { status: 200, headers: { "Content-Type": "text/plain; charset=utf-8", "X-Robots-Tag": "noindex, nofollow" } }
-    );
-  }
-
   const USER = env.BLOG_USER || "nearpro";
   const PASS = env.BLOG_PASS;
 
