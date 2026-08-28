@@ -580,7 +580,7 @@
 
   .article-cta { border: 1px solid var(--line-strong); border-radius: 20px; padding: 34px 30px; margin: 50px 0 0;
     text-align: center; background: rgba(255,255,255,0.02); }
-  .article-cta h3 { font-family: var(--sans); font-size: clamp(17px, 2.4vw, 21px); margin: 0 0 10px; line-height: 1.65; letter-spacing: -0.005em; font-weight: 700; }
+  .article-cta h3 { font-family: var(--sans); font-size: clamp(17px, 2.4vw, 21px); margin: 0 0 10px; line-height: 1.65; letter-spacing: -0.005em; font-weight: 700; padding-left: 0; border-left: 0; }
   .article-cta p { color: var(--muted); font-size: 14.5px; margin: 0 0 22px; }
   .article-back { margin-top: 34px; }
   .article-back a { color: var(--muted); font-size: 14px; display: inline-flex; align-items: center; gap: 8px; }
@@ -653,3 +653,10 @@
     .post-thumb { min-height: 0; aspect-ratio: 16 / 10; }
     .post-body { padding: 22px 20px 24px; }
   }
+
+  /* 記事末の参考文献 */
+  .refs { margin: 54px 0 0; padding-top: 26px; border-top: 1px solid var(--line); }
+  .refs h3 { font-size: 15px; font-weight: 700; color: var(--muted); margin: 0 0 14px;
+    padding-left: 0; border-left: 0; letter-spacing: .04em; }
+  .refs ol { margin: 0; padding-left: 1.4em; }
+  .refs li { color: var(--faint); font-size: 12.5px; line-height: 1.85; margin-bottom: 9px; }
