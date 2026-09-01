@@ -663,3 +663,38 @@
 
   /* 記事内のボタンはトップページと同じ見た目に（本文リンクの下線を打ち消す） */
   .article-body a.btn { text-decoration: none; }
+
+  /* ===== スマホ用ハンバーガーメニュー ===== */
+  header.site .wrap > .nav { margin-left: auto; }
+  .navtoggle { display: none; width: 44px; height: 44px; margin: 0 -10px 0 14px; position: relative;
+    background: transparent; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .navtoggle span { position: absolute; left: 11px; width: 22px; height: 2px; background: var(--text);
+    border-radius: 2px; transition: transform .35s var(--ease), opacity .2s var(--ease); }
+  .navtoggle span:nth-child(1) { top: 15px; }
+  .navtoggle span:nth-child(2) { top: 21px; }
+  .navtoggle span:nth-child(3) { top: 27px; }
+  .navtoggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .navtoggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .navtoggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+  .menu-panel { position: fixed; inset: 0; z-index: 39; display: flex; flex-direction: column; justify-content: center;
+    padding: 96px 26px calc(36px + env(safe-area-inset-bottom, 0px)); overflow-y: auto;
+    background: rgba(11,13,12,0.97); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    opacity: 0; visibility: hidden; transform: translateY(-10px);
+    transition: opacity .3s var(--ease), transform .35s var(--ease), visibility .3s; }
+  body.menu-open .menu-panel { opacity: 1; visibility: visible; transform: none; }
+  body.menu-open { overflow: hidden; }
+  body.menu-open header.site { background: rgba(11,13,12,0.97); border-bottom-color: transparent; }
+  body.menu-open .mobile-cta { display: none; }
+
+  .menu-panel nav { display: flex; flex-direction: column; }
+  .menu-panel nav a { display: flex; align-items: baseline; gap: 14px; padding: 17px 2px;
+    border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 18px; letter-spacing: .06em;
+    color: var(--text); }
+  .menu-panel nav a .jp { font-family: var(--sans); font-size: 12.5px; font-weight: 500; letter-spacing: .04em; color: var(--faint); }
+  .menu-panel nav a[aria-current="page"] { color: var(--accent); }
+  .menu-panel nav a[aria-current="page"] .jp { color: var(--accent-2); }
+  .menu-panel .btn { margin-top: 30px; justify-content: center; }
+
+  @media (max-width: 940px) { .navtoggle { display: block; } }
+  @media (min-width: 941px) { .menu-panel { display: none; } }
