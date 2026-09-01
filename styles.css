@@ -660,3 +660,6 @@
     padding-left: 0; border-left: 0; letter-spacing: .04em; }
   .refs ol { margin: 0; padding-left: 1.4em; }
   .refs li { color: var(--faint); font-size: 12.5px; line-height: 1.85; margin-bottom: 9px; }
+
+  /* 記事内のボタンはトップページと同じ見た目に（本文リンクの下線を打ち消す） */
+  .article-body a.btn { text-decoration: none; }
