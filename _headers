@@ -1,0 +1,3 @@
+# 開発用ファイルは検索エンジンに載せない
+/CLAUDE.md
+  X-Robots-Tag: noindex
