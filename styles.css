@@ -703,3 +703,13 @@
   .post-author { font-family: var(--mono); font-size: 12.5px; color: var(--muted);
     text-decoration: underline; text-underline-offset: 3px; }
   .post-author:hover { color: var(--accent); }
+
+  /* ===== ロゴ ===== */
+  .brand { display: inline-flex; align-items: center; gap: 9px; }
+  .brand-mark { height: 24px; width: auto; display: block; }
+  .brand-text { display: block; white-space: nowrap; }
+  .footer-logo { width: 208px; height: auto; display: block; margin-bottom: 4px; }
+  @media (max-width: 560px) {
+    .brand-mark { height: 19px; }
+    .footer-logo { width: 176px; }
+  }
